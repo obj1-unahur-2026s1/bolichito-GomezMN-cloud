@@ -10,7 +10,7 @@ Tener en cuenta a estas personas:
 - _Estefanía_: le gustan las cosas de colores fuertes.
 - _Luisa_: le gustan las cosas que sean de un material que brilla.
 - _Juan_: le gustan las cosas que, o bien son de un color que no es fuerte, o bien pesan entre 1200 y 1800 gramos.
-
+150
 Como **colores** contemplar (al menos) rojo, verde, celeste y pardo. 
 De estos, los dos primeros son fuertes, los otros no.
 
