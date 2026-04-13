@@ -112,6 +112,22 @@ object placa {
         colorActual = nuevoColor
     }
 }
-object vidriera {
-    
+object bolichito {
+    var objetoEnVidriera = remera
+    var objetoEnMostrador = placa
+    method sonBrillantes() {
+        return objetoEnVidriera.material().esBrillante() && objetoEnMostrador.material().esBrillante()
+    }
+    method sonMonocromaticos() {
+        return objetoEnVidriera.color() == objetoEnMostrador.color()
+    }
+    method estanEquilibrados() {
+        return objetoEnMostrador.peso() > objetoEnVidriera.peso()
+    }
+    method ponerEnVidriera(objeto) { 
+        objetoEnVidriera = objeto 
+        }
+    method ponerEnMostrador(objeto) { 
+        objetoEnMostrador = objeto 
+        }
 }
