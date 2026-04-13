@@ -1,21 +1,21 @@
 object rosa {
     method leGusta(cosa) {
-        cosa.peso() <= 2000
+        return cosa.peso() <= 2000
     } 
 }
 object estefania {
     method leGusta(cosa) {
-        cosa.color().esColorFuerte()
+        return cosa.color().esColorFuerte()
     } 
 }
 object luisa{
     method leGusta(cosa) {
-        cosa.material().esBrillante()
+        return cosa.material().esBrillante()
     }
 }
 object juan {
     method leGusta(cosa) {
-        cosa.color().esColorFuerte() || (cosa.peso().between(1200, 1800) )
+        return cosa.color().esColorFuerte() || (cosa.peso().between(1200, 1800) )
     } 
 }
 object rojo {
@@ -112,6 +112,36 @@ object placa {
         colorActual = nuevoColor
     }
 }
+object arito {
+    method material() = cobre
+    method color() = celeste
+    method peso() = 180
+}
+object naranja {
+    method esColorFuerte() {
+        return false
+    }
+}
+object cajita {
+    var objetoInterior = remera
+    method material() = cobre
+    method peso() = 400 + objetoInterior.peso()
+    method objetoInterior() {
+        return objetoInterior 
+    }
+    method cambiarObjetoInterior(nuevoObjetoInterior) {
+        objetoInterior = nuevoObjetoInterior
+    }
+}
+object banquito {
+    var colorActual = naranja
+    method color() = colorActual
+    method material() = madera
+    method peso() = 1700
+    method cambiarColor(nuevoColor) {
+        colorActual = nuevoColor
+    } 
+}
 object bolichito {
     var objetoEnVidriera = remera
     var objetoEnMostrador = placa
@@ -123,6 +153,16 @@ object bolichito {
     }
     method estanEquilibrados() {
         return objetoEnMostrador.peso() > objetoEnVidriera.peso()
+    }
+    method esColor(color) {
+        return objetoEnMostrador.color() == color || objetoEnVidriera.color() == color
+    }
+    method puedeMejorar(){
+        return self.sonMonocromaticos() || self.estanEquilibrados()
+    }
+    method puedeOfrecer(persona) {
+        return persona.leGusta(objetoEnMostrador) || persona.leGusta(objetoEnVidriera)
+
     }
     method ponerEnVidriera(objeto) { 
         objetoEnVidriera = objeto 
